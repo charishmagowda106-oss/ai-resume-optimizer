@@ -27,20 +27,19 @@ if uploaded_file and job_description:
     with open("temp_resume.pdf", "wb") as f:
         f.write(uploaded_file.getbuffer())
 
-    resume_text = extract_text_from_pdf("temp_resume.pdf")
+    resume_text = extract_text("temp_resume.pdf")
 
     extracted_skills = extract_skills(resume_text)
-    match_percentage = calculate_similarity(resume_text, job_description)
+    match_percentage = calculate_match(resume_text, job_description)
 
     st.subheader("✅ Extracted Skills")
     for skill in extracted_skills:
-     st.markdown(f"- ✅ {skill}")
+        st.markdown(f"- ✅ {skill}")
 
     st.subheader("📊 Match Percentage")
     st.progress(int(match_percentage))
     st.write(f"### {match_percentage}% Match")
 
-    # Missing skills
     job_skills = extract_skills(job_description)
     missing_skills = list(set(job_skills) - set(extracted_skills))
 
