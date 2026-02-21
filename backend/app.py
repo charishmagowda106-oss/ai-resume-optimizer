@@ -1,9 +1,5 @@
 import streamlit as st
-from resume_parser import (
-    extract_text_from_pdf,
-    extract_skills,
-    calculate_similarity
-)
+from resume_parser import extract_text, extract_skills, calculate_match
 st.markdown("""
 <style>
 .big-title {
