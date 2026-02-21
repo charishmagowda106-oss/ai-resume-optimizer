@@ -85,5 +85,7 @@ if __name__ == "__main__":
     missing_skills = [skill for skill in job_skills if skill not in skills]
 
     print("Missing Skills:", missing_skills)
+    if __name__ == "__main__":
+    ...
 
    
