@@ -1,5 +1,6 @@
 import streamlit as st
 from resume_parser import extract_text, extract_skills, calculate_match
+st.set_page_config(page_title="AI Resume Optimizer", layout="centered")
 st.markdown("""
 <style>
 .big-title {
@@ -11,7 +12,7 @@ st.markdown("""
 
 st.markdown('<p class="big-title">🚀 AI Resume & Career Optimizer</p>', unsafe_allow_html=True)
 
-st.set_page_config(page_title="AI Resume Optimizer", layout="centered")
+
 
 st.title("📄 AI Resume & Career Optimizer")
 st.write("Upload your resume and paste a job description to see how well you match.")
